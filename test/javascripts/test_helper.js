@@ -1,5 +1,6 @@
 //= require sinon
 //= require application
+//= require specit
 //= require_tree .
 //= require_self
 

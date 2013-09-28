@@ -1,5 +1,5 @@
-module("Entry Page Follow Link Test", {
-    setup: function() {
+describe("Entry Page Follow Link Test", function() {
+    before(function() {
         Ember.run(function() {
             Etst.reset();
         });
@@ -21,35 +21,36 @@ module("Entry Page Follow Link Test", {
         });
 
         server.autoRespond = true;
-    },
-
-    teardown: function() {
-        Ember.testing = false;
-    }
-});
-
-test("it goes to the personas page", function() {
-    visit("/personas").then(function() {
-        equal(find("h3").text(), "Current Personas:");
-        var links = find("a");
-        equal(links.length, 2);
-        equal(links[0].text, "Jack");
-        equal(links[1].text, "Jill");
-        equal(find("h4").length, 0);
-        equal(find("input").length, 0);
     });
-});
 
-test("it goes to the personas page's detail", function() {
-    visit("/personas").then(function() {
-        var links = find("a");
-        click(links[0]).then(function() {
-            equal(find("h4").text(), "Persona for Jack (clean)");
-            var inputs = find("input");
-            equal(inputs.length, 3);
-            equal(inputs[0].value, "Jack");
-            equal(inputs[1].value, "32");
-            equal(inputs[2].value, "Spam");
+    after(function() {
+        Ember.testing = false;
+    });
+
+    it("goes to the personas page", function() {
+        visit("/personas").then(function() {
+            assert(find("h3").text()).should(eql, "Current Personas:");
+            var links = find("a");
+            assert(links.length).should(eql, 2);
+            assert(links[0].text).should(eql, "Jack");
+            assert(links[1].text).should(eql, "Jill");
+            assert(find("h4").length).should(eql, 0);
+            assert(find("input").length).should(eql, 0);
         });
     });
+
+    it("goes to the personas page's detail", function() {
+        visit("/personas").then(function() {
+            var links = find("a");
+            click(links[0]).then(function() {
+                assert(find("h4").text()).should(eql, "Persona for Jack (clean)");
+                var inputs = find("input");
+                assert(inputs.length).should(eql, 3);
+                assert(inputs[0].value).should(eql, "Jack");
+                assert(inputs[1].value).should(eql, "32");
+                assert(inputs[2].value).should(eql, "Spam");
+            });
+        });
+    });
+
 });
