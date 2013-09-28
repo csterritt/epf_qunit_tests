@@ -1,0 +1,26 @@
+h4
+  ' Persona for
+  = name
+  '
+  if isClean
+    i (clean)
+  else
+    i (dirty)
+table
+  tr
+    td
+      | Name:
+    td
+      Ember.TextField valueBinding="name"
+  tr
+    td
+      | Age:
+    td
+      Ember.TextField valueBinding="age"
+  tr
+    td
+      | Favorite Food:
+    td
+      Ember.TextField valueBinding="favorite_food"
+br
+  button click="saveAction" disabled=isClean Save

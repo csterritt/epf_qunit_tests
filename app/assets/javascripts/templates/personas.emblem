@@ -1,0 +1,11 @@
+h3 Current Personas:
+each persona in controller
+  p
+    ' Persona Name:
+    linkTo "persona" persona.id
+      = persona.name
+else
+  p No Personas!
+hr
+
+= outlet
