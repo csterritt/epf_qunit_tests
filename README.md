@@ -22,9 +22,10 @@ have Ruby (at least version 1.9.3) set up.
 
 % rails s
 
-Then you can visit the app on http://localhost:3000 to play around with it.
+Then you can visit the app on [localhost:3000](http://localhost:3000) to play around
+with it.
 
-You can run the tests by visiting http://localhost:3000/qunit.
+You can run the tests by visiting [localhost:3000/qunit](http://localhost:3000/qunit).
 
 You'll note that you have a half-size version of the page in the bottom-right hand
 corner of the tests page.  The test teardown sets "Ember.testing = false;" so that you
