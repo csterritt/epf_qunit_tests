@@ -39,3 +39,10 @@ This is probably a bug :-)
 **NOTE**: There is an Epf bug in that when you change one of the values in the detail
 page, the "(clean)" designation will change to "(dirty)", but when you save it won't
 change back.  This Epf people are working on this.
+
+**NOTE 2**: Added a "specit" branch with tests switched to the
+[SpecIt](https://github.com/joshuaclayton/specit) syntax,
+for those who prefer RSpec-style test specification.
+
+**NOTE 3**: Added a "coffeescript" branch (building off of the "specit" branch) with the
+tests translated to coffeescript.
