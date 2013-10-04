@@ -9,6 +9,7 @@ gem "sqlite3", "~> 1.3.8"
 
 gem "ember-rails", "~> 0.13.0"
 gem "ember-source", "~> 1.0.0"
+gem "epf-rails", "~> 1.1.0"
 gem "emblem-rails", "~> 0.1.1"
 
 # Gems used only for assets and not required
@@ -26,5 +27,6 @@ end
 gem "jquery-rails"
 
 group :development, :test do
+  gem "sinon-rails", "~> 1.7.3"
   gem "qunit-rails", "~> 0.0.3"
 end
